@@ -61,7 +61,6 @@ public class DatabaseConnection {
         return connection;
     }
 
-    // Método para cerrar la conexión (opcional, para liberar recursos)
     public void closeConnection() {
         try {
             if (connection != null && !connection.isClosed()) {

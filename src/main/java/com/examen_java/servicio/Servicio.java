@@ -14,7 +14,15 @@ public class Servicio {
     private String nombre;
     private String descripcion;
     private int precioPorHora;
-    private String categoria;
+    private Categoria categoria;
+
+    public Servicio(int id, String nombre, String descripcion, int precioPorHora, Categoria categoria) {
+        this.id = id;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.precioPorHora = precioPorHora;
+        this.categoria = categoria;
+    }
 
     public int getId() {
         return id;
@@ -48,37 +56,14 @@ public class Servicio {
         this.precioPorHora = precioPorHora;
     }
 
-    public String getCategoria() {
+    public Categoria getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(String categoria) {
+    public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
 
-    public Servicio(int id, String nombre, String descripcion, int precioPorHora, String categoria) {
-        this.id = id;
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.precioPorHora = precioPorHora;
-        this.categoria = categoria;
-    }
-
-    public Servicio() {
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Servicio{");
-        sb.append("id=").append(id);
-        sb.append(", nombre=").append(nombre);
-        sb.append(", descripcion=").append(descripcion);
-        sb.append(", precioPorHora=").append(precioPorHora);
-        sb.append(", categoria=").append(categoria);
-        sb.append('}');
-        return sb.toString();
-    }
     
     
     

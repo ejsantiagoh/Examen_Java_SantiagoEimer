@@ -14,12 +14,9 @@ public class Proyecto {
     private String nombre;
     private String fechaInicio;
     private String fechaFin;
-    private String estado;
+    private EstadoProyecto estado;
 
-    public Proyecto() {
-    }
-
-    public Proyecto(int id, int idCliente, String nombre, String fechaInicio, String fechaFin, String estado) {
+    public Proyecto(int id, int idCliente, String nombre, String fechaInicio, String fechaFin, EstadoProyecto estado) {
         this.id = id;
         this.idCliente = idCliente;
         this.nombre = nombre;
@@ -68,27 +65,15 @@ public class Proyecto {
         this.fechaFin = fechaFin;
     }
 
-    public String getEstado() {
+    public EstadoProyecto getEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(EstadoProyecto estado) {
         this.estado = estado;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Proyecto{");
-        sb.append("id=").append(id);
-        sb.append(", idCliente=").append(idCliente);
-        sb.append(", nombre=").append(nombre);
-        sb.append(", fechaInicio=").append(fechaInicio);
-        sb.append(", fechaFin=").append(fechaFin);
-        sb.append(", estado=").append(estado);
-        sb.append('}');
-        return sb.toString();
-    }
+    
     
     
 }

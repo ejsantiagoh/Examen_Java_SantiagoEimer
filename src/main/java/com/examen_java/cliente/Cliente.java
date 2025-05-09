@@ -4,10 +4,17 @@
  */
 package com.examen_java.cliente;
 
+import com.examen_java.contrato.Contrato;
+import com.examen_java.proyecto.EstadoProyecto;
+import com.examen_java.proyecto.Proyecto;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 /**
  *
  * @author camper
  */
+
 public class Cliente {
     private int id;
     private String nombre;
@@ -15,8 +22,24 @@ public class Cliente {
     private String correo;
     private String telefono;
     private String direccion;
-    private String sector;
+    private Sector sector;
+    private List<Contrato> contratos = new ArrayList<>(); // Para consultarContratos()
+    private List<Proyecto> proyectos = new ArrayList<>(); // Para listarProyectosActivos()
 
+    public Cliente() {
+    }
+
+    public Cliente(int id, String nombre, String representante, String correo, String telefono, String direccion, Sector sector) {
+        this.id = id;
+        this.nombre = nombre;
+        this.representante = representante;
+        this.correo = correo;
+        this.telefono = telefono;
+        this.direccion = direccion;
+        this.sector = sector;
+    }
+
+    // Getters y setters
     public int getId() {
         return id;
     }
@@ -65,44 +88,42 @@ public class Cliente {
         this.direccion = direccion;
     }
 
-    public String getSector() {
+    public Sector getSector() {
         return sector;
     }
 
-    public void setSector(String sector) {
+    public void setSector(Sector sector) {
         this.sector = sector;
     }
 
-    public Cliente(int id, String nombre, String representante, String correo, String telefono, String direccion, String sector) {
-        this.id = id;
-        this.nombre = nombre;
-        this.representante = representante;
-        this.correo = correo;
-        this.telefono = telefono;
-        this.direccion = direccion;
-        this.sector = sector;
+    public List<Contrato> consultarContratos() {
+        return contratos;
     }
 
-    public Cliente() {
+    public List<Proyecto> listarProyectosActivos() {
+        return proyectos.stream()
+                .filter(p -> p.getEstado() == EstadoProyecto.EN_CURSO)
+                .collect(Collectors.toList());
+    }
+
+    public void agregarContrato(Contrato contrato) {
+        contratos.add(contrato);
+    }
+
+    public void agregarProyecto(Proyecto proyecto) {
+        proyectos.add(proyecto);
     }
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Cliente{");
-        sb.append("id=").append(id);
-        sb.append(", nombre=").append(nombre);
-        sb.append(", representante=").append(representante);
-        sb.append(", correo=").append(correo);
-        sb.append(", telefono=").append(telefono);
-        sb.append(", direccion=").append(direccion);
-        sb.append(", sector=").append(sector);
-        sb.append('}');
-        return sb.toString();
+        return "Cliente{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", representante='" + representante + '\'' +
+                ", correo='" + correo + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", sector=" + sector +
+                '}';
     }
-
-    
-    
-    
-    
 }

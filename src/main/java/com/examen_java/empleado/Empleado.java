@@ -13,13 +13,10 @@ public class Empleado {
     private String nombre;
     private String cargo;
     private int salario;
-    private String especialidad;
+    private Especialidad especialidad;
     private int idProyecto;
 
-    public Empleado() {
-    }
-
-    public Empleado(int id, String nombre, String cargo, int salario, String especialidad, int idProyecto) {
+    public Empleado(int id, String nombre, String cargo, int salario, Especialidad especialidad, int idProyecto) {
         this.id = id;
         this.nombre = nombre;
         this.cargo = cargo;
@@ -60,11 +57,11 @@ public class Empleado {
         this.salario = salario;
     }
 
-    public String getEspecialidad() {
+    public Especialidad getEspecialidad() {
         return especialidad;
     }
 
-    public void setEspecialidad(String especialidad) {
+    public void setEspecialidad(Especialidad especialidad) {
         this.especialidad = especialidad;
     }
 
@@ -76,19 +73,7 @@ public class Empleado {
         this.idProyecto = idProyecto;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Empleado{");
-        sb.append("id=").append(id);
-        sb.append(", nombre=").append(nombre);
-        sb.append(", cargo=").append(cargo);
-        sb.append(", salario=").append(salario);
-        sb.append(", especialidad=").append(especialidad);
-        sb.append(", idProyecto=").append(idProyecto);
-        sb.append('}');
-        return sb.toString();
-    }
+    
     
     
 }

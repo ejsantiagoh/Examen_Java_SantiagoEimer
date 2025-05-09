@@ -15,12 +15,9 @@ public class Contrato {
     private String fechaInicio;
     private String fechaFin;
     private int costoTotal;
-    private String estado;
+    private EstadoContrato estado;
 
-    public Contrato() {
-    }
-
-    public Contrato(int id, int idCliente, int idServicio, String fechaInicio, String fechaFin, int costoTotal, String estado) {
+    public Contrato(int id, int idCliente, int idServicio, String fechaInicio, String fechaFin, int costoTotal, EstadoContrato estado) {
         this.id = id;
         this.idCliente = idCliente;
         this.idServicio = idServicio;
@@ -78,28 +75,15 @@ public class Contrato {
         this.costoTotal = costoTotal;
     }
 
-    public String getEstado() {
+    public EstadoContrato getEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(EstadoContrato estado) {
         this.estado = estado;
     }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Contrato{");
-        sb.append("id=").append(id);
-        sb.append(", idCliente=").append(idCliente);
-        sb.append(", idServicio=").append(idServicio);
-        sb.append(", fechaInicio=").append(fechaInicio);
-        sb.append(", fechaFin=").append(fechaFin);
-        sb.append(", costoTotal=").append(costoTotal);
-        sb.append(", estado=").append(estado);
-        sb.append('}');
-        return sb.toString();
-    }
+    
+    
     
     
 }
