@@ -1,7 +1,7 @@
 # Examen_Java_SantiagoEimer
 ## Soluciones Eficientes
 
-Sistema de Gestión para Taller Automotriz
+Sistema de Gestión para Empresa de outsorcing
 
 ### 📌 Descripción General
 
